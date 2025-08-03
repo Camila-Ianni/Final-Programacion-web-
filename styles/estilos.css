@@ -1,4 +1,4 @@
- 
+  
 * {
   box-sizing: border-box;
   margin: 0;
@@ -416,9 +416,11 @@ header, .top-bar, .top-bar nav {
   background-color: #eaeaea;
   font-weight: 600;
 }
+
 .product-card {
-  width: 280px;
-  height: 420px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -428,9 +430,10 @@ header, .top-bar, .top-bar nav {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   text-align: center;
   overflow: hidden;
-  margin: auto;
   transition: transform 0.5s ease-in-out;
 }
+
+
 
 .product-card:hover {
   transform: scale(1.05);
@@ -440,7 +443,7 @@ header, .top-bar, .top-bar nav {
 /* Contenedor de imagen */
 .product-card .image {
   width: 100%;
-  height: 200px; /* más espacio para el texto */
+  height: 300px; /* más espacio para el texto */
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -514,4 +517,80 @@ header, .top-bar, .top-bar nav {
 .section-title {
   font-weight: 500;
   font-family: inherit; /* o poné 'sans-serif' si querés algo más neutro */
+}
+
+/* Añade esto a tu archivo estilos.css */
+
+/* Contenedor principal de productos */
+.tab-content .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Cada columna de producto */
+.tab-content .col {
+  display: flex;
+}
+
+/* Card de producto */
+.tab-content .product-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  background: #fff;
+}
+
+/* Contenedor de imagen */
+.tab-content .product-card .image {
+  flex: 1;
+  min-height: 200px;
+  max-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #fff;
+}
+
+/* Imagen dentro de la card */
+.tab-content .product-card .image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Contenido de texto */
+.tab-content .product-card .learn {
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Efecto hover */
+.tab-content .product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .tab-content .product-card .image {
+    min-height: 180px;
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tab-content .product-card .image {
+    min-height: 160px;
+    max-height: 160px;
+  }
 }
