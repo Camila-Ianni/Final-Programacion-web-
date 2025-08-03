@@ -4,9 +4,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Product Page - Responsive Bootstrap</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
+    /* Añade esto al final de tu sección de estilos */
+/* Añade esto a tu sección de estilos */
+.product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card .image {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-card .image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .image img {
+  transform: scale(1.05);
+}
+
+.product-card .info {
+  padding: 15px;
+  flex-shrink: 0;
+}
+
+.product-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  min-height: 1.5rem; /* Altura mínima para una línea */
+}
+
+.product-card p {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  min-height: 1.5rem; /* Altura mínima para una línea */
+}
+
+.product-card .price {
+  font-weight: bold;
+  margin-top: auto; /* Empuja el precio hacia abajo */
+}
+
+/* Asegurar misma altura en todas las cards */
+.row-cols-2 > *, 
+.row-cols-sm-2 > *, 
+.row-cols-md-4 > * {
+  display: flex;
+}
+/* Mejoras generales de responsive */
+@media (max-width: 767.98px) {
+  /* Ajustes para móviles */
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Miniaturas en móvil con scroll horizontal */
+  .thumbs.d-md-none {
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .thumbs.d-md-none::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+  
+  .thumbs.d-md-none img {
+    min-width: 80px;
+    height: 80px;
+    margin-right: 8px;
+  }
+  
+  /* Ajustes para el formulario en footer */
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .footer-right {
+    min-width: 100%;
+  }
+  
+  /* Productos recomendados - 1 por fila en móviles pequeños */
+  @media (max-width: 400px) {
+    .row-cols-2 > * {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
+  /* Mejorar accesibilidad de botones en móvil */
+  .btn, .size-options button, .quantity-control button {
+    min-height: 44px; /* Tamaño mínimo para facilidad de touch */
+  }
+  
+  .quantity-control {
+    max-width: 100%;
+  }
+  
+  .quantity-control input {
+    width: 50px;
+    height: 44px;
+  }
+}
+
+/* Tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Ajustar el grid de productos recomendados */
+  .row-cols-md-4 > * {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  /* Ajustar tamaño de miniaturas */
+  .thumbs.d-none.d-md-flex img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  /* Footer - dos columnas */
+  .footer-content {
+    flex-wrap: nowrap;
+    gap: 40px;
+  }
+  
+  .footer-left {
+    flex: 1;
+  }
+  
+  .footer-right {
+    flex: 1;
+    min-width: auto;
+  }
+}
+
+/* Ajustes para pantallas muy grandes */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Mejorar accesibilidad en todos los dispositivos */
+.color-dot {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+}
+
+.size-options button {
+  min-width: 50px;
+  padding: 8px 12px;
+}
+
+/* Asegurar que las imágenes no desborden */
+.main-image, .product-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mejorar el footer en móviles */
+@media (max-width: 576px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+  }
+  
+  .custom-footer {
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-logo-img {
+    width: 180px;
+  }
+}
     .product-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -344,8 +529,8 @@
       </div>
 
       <div class="col-12 col-md-5">
-        <h4 class="fw-bold">Lorem ipsum dolor sit</h4>
-        <p class="text-muted">consectetur adipiscing elit</p>
+        <h4 class="fw-bold">Black high-heels</h4>
+        <p class="text-muted">A piece of fashion</p>
         <h5 class="mb-3">$445.45</h5>
 
         <div class="mb-3">
@@ -377,7 +562,7 @@
 
         <div class="mt-4">
           <h6>Details</h6>
-          <p class="text-muted small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed ultrices justo.</p>
+          <p class="text-muted small">Black high-heels, 9 inches, winter collection, limited edition</p>
         </div>
       </div>
     </div>
@@ -393,8 +578,8 @@
         <div class="product-card card-hover">
           <div class="image"><img src="img-home/6.jpg" class="img-fluid rounded" alt="Product 6"></div>
           <div class="info mt-2">
-            <h4>DESIGNER</h4>
-            <p>Lorem ipsum dolor sit</p>
+            <h4>DOLCE & GABBANA</h4>
+            <p>Resin bag</p>
             <p class="price">$145.45</p>
           </div>
         </div>
@@ -403,8 +588,8 @@
         <div class="product-card card-hover">
           <div class="image"><img src="img-home/26.jpg" class="img-fluid rounded" alt="Product 7"></div>
           <div class="info mt-2">
-            <h4>CASUAL</h4>
-            <p>Comfortable style</p>
+            <h4>DOLCE & GABBANA</h4>
+            <p>Earrings</p>
             <p class="price">$99.99</p>
           </div>
         </div>
@@ -413,8 +598,8 @@
         <div class="product-card card-hover">
           <div class="image"><img src="img-home/45.jpg" class="img-fluid rounded" alt="Product 8"></div>
           <div class="info mt-2">
-            <h4>SPORTY</h4>
-            <p>Active wear</p>
+            <h4>DOLCE & GABBANA</h4>
+            <p>Boots</p>
             <p class="price">$120.00</p>
           </div>
         </div>
@@ -423,8 +608,8 @@
         <div class="product-card card-hover">
           <div class="image"><img src="img-home/9.jpg" class="img-fluid rounded" alt="Product 9"></div>
           <div class="info mt-2">
-            <h4>FORMAL</h4>
-            <p>Elegant outfits</p>
+            <h4>DOLCE & GABBANA</h4>
+            <p>Resin Bag</p>
             <p class="price">$200.00</p>
           </div>
         </div>
