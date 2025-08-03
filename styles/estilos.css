@@ -1,0 +1,517 @@
+ 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  background: #fff;
+  color: #111;
+}
+
+ 
+ /*NAVBAR */
+.top-bar {
+  background-color: #000 !important;
+  color: white;
+}
+
+header, .top-bar, .top-bar nav {
+  background-color: #000 !important;
+}
+ 
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' fill='%23000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23000' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.elegant-navbar {
+  background-color: #fdfdfd;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: none !important;
+}
+
+.navbar-nav .nav-link {
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  color: #333 !important;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #f0f0f0;
+  color: #000 !important;
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: 600;
+  background-color: #eaeaea;
+}
+
+    
+
+.search-container {
+  background-color: white;
+  border-radius: 999px;
+  height: 36px;
+  width: 36px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: width 0.3s ease, padding 0.3s ease;
+  padding: 0;
+  position: relative;
+}
+
+/* Expandir al hover/focus */
+.search-container:hover,
+.search-container:focus-within {
+  width: 160px;
+  padding: 0 8px;
+}
+
+.search-icon {
+  color: black;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  transition: padding 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  transform: translateX(-9px); /* ícono más a la izquierda */
+}
+
+/* Cuando se expande el input, volvemos el icono a posición normal */
+.search-container:hover .search-icon,
+.search-container:focus-within .search-icon {
+  padding-left: 6px;
+  width: auto;
+  transform: translateX(0);
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 4px;
+  background-color: transparent;
+  color: black;
+  opacity: 0;
+  width: 0;
+  transition: all 0.3s ease;
+  flex-grow: 1;
+}
+
+/* Mostrar input cuando se activa */
+.search-container:hover .search-input,
+.search-container:focus-within .search-input {
+  width: 100%;
+  opacity: 1;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+/* Responsive: en móvil ocultar input hasta que tenga foco */
+@media (max-width: 576px) {
+  .search-container {
+    width: 36px;
+    padding: 0;
+  }
+
+  .search-input {
+    display: none;
+  }
+
+  .search-container:focus-within {
+    width: 140px;
+    padding: 0 8px;
+  }
+
+  .search-container:focus-within .search-input {
+    display: block;
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* FOOTER */
+.custom-footer {
+  background-color: white;
+  color: #000;
+  padding: 60px 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 80px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-left h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.footer-left ul {
+  list-style: none;
+  font-size: 16px;
+  padding: 0;
+}
+
+.footer-left li {
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-left li::before {
+  content: "◆";
+  color: black;
+  font-size: 14px;
+}
+
+.footer-right {
+  flex: 1;
+  min-width: 320px;
+  max-width: 400px;
+}
+
+.footer-right input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.footer-right .terms {
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+
+.footer-right .terms a {
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-right button {
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.main-signup {
+  background: white;
+  border: 1px solid black;
+  margin-bottom: 16px;
+}
+
+.or-divider {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #666;
+  font-size: 13px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  border: 1px solid black;
+  background: white;
+  margin-bottom: 12px;
+}
+
+.social-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding: 0 10%;
+}
+
+.footer-links h5 {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  font-size: 13px;
+}
+
+.footer-links ul li {
+  margin-bottom: 6px;
+}
+
+.social-icons img {
+  width: 18px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+/*primeras cards*/
+
+.card {
+  background-color: #ffffff;       /* blanco puro */
+  border: 1px solid #fff;          /* sin borde gris */
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* sombra muy sutil */
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.fixed-img {
+  max-height: 300px;
+  object-fit: contain;
+  object-position: center;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.card-body {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* BOTÓN MÁS REDONDEADO Y ELEGANTE */
+.card .btn {
+  border-radius: 999px;
+  padding: 6px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #333;
+  color: #333;
+}
+
+.card .btn:hover {
+  background-color: #333;
+  color: white;
+}
+
+/*our best sellers cards*/
+.best-seller-card {
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  height: 100%;
+}
+
+.best-seller-card:hover {
+  transform: scale(1.03);
+}
+
+.best-img {
+  max-height: 300px;
+  object-fit: contain;
+  width: 100%;
+}
+
+/*our products*/
+
+/* Caja exterior de las pestañas */
+.tab-content {
+  background-color: #fff;
+  border: 1px solid #ddd;         /* borde gris suave */
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.tab-content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* sombra sutil */
+}
+
+/* Ajuste a los botones de las pestañas */
+.nav-tabs {
+  border-bottom: none;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.nav-tabs .nav-link {
+  color: #888;                    /* gris claro por defecto */
+  border: none;
+  background: none;
+  font-weight: 500;
+  margin: 0 8px;
+  padding: 10px 16px;
+  transition: all 0.2s ease;
+  border-radius: 999px;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+.nav-tabs .nav-link.active {
+  color: #000;                    /* negro cuando está activo */
+  background-color: #eaeaea;
+  font-weight: 600;
+}
+.product-card {
+  width: 280px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  border-radius: 16px;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  overflow: hidden;
+  margin: auto;
+  transition: transform 0.5s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Contenedor de imagen */
+.product-card .image {
+  width: 100%;
+  height: 200px; /* más espacio para el texto */
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+/* Imagen: contención y proporción */
+.product-card .image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Área del texto */
+.product-card .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.product-card .info h4 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-card .info p {
+  margin: 0.25rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.product-card .info .price {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #000;
+}
+
+
+.side-img {
+  height: 300px;
+  object-fit: contain;
+}
+
+.center-img {
+  height: 420px;
+  object-fit: contain;
+}
+
+.arrow-btn {
+  background-color: #f9f7f1;
+  border: none;
+  border-radius: 5px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Para el título sin negrita extrema */
+.section-title {
+  font-weight: 500;
+  font-family: inherit; /* o poné 'sans-serif' si querés algo más neutro */
+}
